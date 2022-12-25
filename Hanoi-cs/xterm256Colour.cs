@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Hanoi_cs
 {
-    internal class xterm256Colour
+    using xterm256Colour = String;
+
+    internal class HanoiColour
     {
-        public const String Default = "\x1b[0m";
-        public const String Red = "\x1b[38;5;9m";
-        public const String Green = "\x1b[38;5;10m";
-        public const String Yellow = "\x1b[38;5;11m";
-        public const String Magenta = "\x1b[38;5;13m";
-        public const String Cyan = "\x1b[38;5;14m";
+        public const xterm256Colour Default = "\x1b[0m";
+        public const xterm256Colour Red = "\x1b[38;5;9m";
+        public const xterm256Colour Green = "\x1b[38;5;10m";
+        public const xterm256Colour Yellow = "\x1b[38;5;11m";
+        public const xterm256Colour Magenta = "\x1b[38;5;13m";
+        public const xterm256Colour Cyan = "\x1b[38;5;14m";
     }
 }

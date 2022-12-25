@@ -25,9 +25,5 @@ namespace Hanoi_cs
         {
             return "\x1b[D".Repeat(n);
         }
-
-        //public static string cr() { return "\r"; }
-
-        //public static string newLine() { return "\n"; }
     }
 }

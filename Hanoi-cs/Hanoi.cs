@@ -99,13 +99,37 @@ namespace Hanoi_cs
             if (i < Height)
             {
                 Solve(i + 1);
-
                 T[i] = ((i & 0b1) == 0) ? (T[i] + 1) % 3 : Math.Min((T[i] - 1) & 0b11, 2);
-                PrintTower();
-
                 Solve(i + 1);
             }
         }
 
+
+        // Solve method with console based tower rendering
+        private int _solveRender(int i, int iteration)
+        {
+            if(i < Height)
+            {
+                iteration = _solveRender(i + 1, iteration);
+
+                T[i] = ((i & 0b1) == 0) ? (T[i] + 1) % 3 : Math.Min((T[i] - 1) & 0b11, 2);
+                iteration++;
+
+                Console.WriteLine("\n\nIteration {0}:\n", iteration);
+                PrintTower();
+
+                iteration = _solveRender(i + 1, iteration);
+            }
+
+            return iteration;
+        }
+
+        public void SolveRender()
+        {
+            Console.WriteLine("Initial state:\n");
+            PrintTower();
+
+            _solveRender(0, 0);
+        }
     }
 }
